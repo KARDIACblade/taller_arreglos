@@ -59,9 +59,18 @@ function pintarArregloDerecha() {
         filas += "<tr>";
         filas += "<td><button class='btn-mover'>⬅</button></td>";
         filas += "<td>" + arregloDerecho[i] + "</td>";
-        filas += "<td><button class='btn-eliminar'>Eliminar</button></td>";
+
+        filas += "<td><button class='btn-eliminar' onclick='eliminarDerecho(" + i + ")'>Eliminar</button></td>";
         filas += "</tr>";
     }
 
     tabla.innerHTML = filas;
+}
+
+
+// PASO 6: Función eliminarDerecho
+
+function eliminarDerecho(indice) {
+    arregloDerecho.splice(indice, 1);
+    pintarArregloDerecha();
 }
