@@ -57,7 +57,7 @@ function pintarArregloDerecha() {
 
     for (let i = 0; i < arregloDerecho.length; i++) {
         filas += "<tr>";
-        filas += "<td><button class='btn-mover' onclick='moverHaciaIzquierda(" + i + ")'    >⬅</button></td>";
+        filas += "<td><button class='btn-mover' onclick='moverHaciaIzquierda(" + i + ")'>⬅</button></td>";
 
         filas += "<td>" + arregloDerecho[i] + "</td>";
 
