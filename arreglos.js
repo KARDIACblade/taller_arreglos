@@ -15,5 +15,27 @@ function agregarEdad() {
    
 
     // TEMPORAL: solo para comprobar que funciona, mostramos el arreglo en la consola
-    console.log("Arreglo izquierdo:", arregloIzquierdo);
+    //console.log("Arreglo izquierdo:", arregloIzquierdo);
+    pintarArregloIzquierda();
+}
+
+// PASO 3: Función pintarArregloIzquierda
+
+function pintarArregloIzquierda() {
+
+       let tabla = document.getElementById("tablaIzquierda");
+
+        let filas = "";
+
+    for (let i = 0; i < arregloIzquierdo.length; i++) {
+        // CAMBIO: ahora se une el texto con comillas normales y el operador +
+        // Lo único que cambia en cada vuelta es el valor: arregloIzquierdo[i]
+        filas += "<tr>";
+        filas += "<td>" + arregloIzquierdo[i] + "</td>";
+        filas += "<td><button class='btn-eliminar'>Eliminar</button></td>";
+        filas += "<td><button class='btn-mover'>➜</button></td>";
+        filas += "</tr>";
+    }
+
+    tabla.innerHTML = filas;
 }
