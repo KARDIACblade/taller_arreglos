@@ -48,3 +48,20 @@ function eliminarIzquierdo(indice) {
     arregloIzquierdo.splice(indice, 1);
     pintarArregloIzquierda();
 }
+
+
+// PASO 5: Función pintarArregloDerecha
+function pintarArregloDerecha() {
+    let tabla = document.getElementById("tablaDerecha");
+    let filas = "";
+
+    for (let i = 0; i < arregloDerecho.length; i++) {
+        filas += "<tr>";
+        filas += "<td><button class='btn-mover'>⬅</button></td>";
+        filas += "<td>" + arregloDerecho[i] + "</td>";
+        filas += "<td><button class='btn-eliminar'>Eliminar</button></td>";
+        filas += "</tr>";
+    }
+
+    tabla.innerHTML = filas;
+}
