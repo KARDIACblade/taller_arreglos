@@ -35,7 +35,7 @@ function pintarArregloIzquierda() {
 
         filas += "<td><button class='btn-eliminar' onclick='eliminarIzquierdo(" + i + ")'>Eliminar</button></td>";
 
-        filas += "<td><button class='btn-mover'>➜</button></td>";
+        filas += "<td><button class='btn-mover' onclick='moverHaciaDerecha(" + i + ")'>➜</button></td>";
         filas += "</tr>";
     }
 
@@ -72,5 +72,19 @@ function pintarArregloDerecha() {
 
 function eliminarDerecho(indice) {
     arregloDerecho.splice(indice, 1);
+    pintarArregloDerecha();
+}
+
+
+
+// PASO 7: Función moverHaciaDerecha
+
+function moverHaciaDerecha(indice) {
+    let valor = arregloIzquierdo[indice];
+
+    arregloDerecho.push(valor);
+    arregloIzquierdo.splice(indice, 1);
+
+    pintarArregloIzquierda();
     pintarArregloDerecha();
 }
