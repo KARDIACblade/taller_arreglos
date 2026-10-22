@@ -32,10 +32,19 @@ function pintarArregloIzquierda() {
         // Lo único que cambia en cada vuelta es el valor: arregloIzquierdo[i]
         filas += "<tr>";
         filas += "<td>" + arregloIzquierdo[i] + "</td>";
-        filas += "<td><button class='btn-eliminar'>Eliminar</button></td>";
+
+        filas += "<td><button class='btn-eliminar' onclick='eliminarIzquierdo(" + i + ")'>Eliminar</button></td>";
+
         filas += "<td><button class='btn-mover'>➜</button></td>";
         filas += "</tr>";
     }
 
     tabla.innerHTML = filas;
+}
+
+// PASO 4: Función eliminarIzquierdo
+
+function eliminarIzquierdo(indice) {
+    arregloIzquierdo.splice(indice, 1);
+    pintarArregloIzquierda();
 }
